@@ -32,10 +32,7 @@
         return measurmentResult;
       }
 
-      var depthOne = depthList[0];
-      var depthTwo = depthList[1];
-      var depthThree = depthList[2];
-      var sumDepth = depthOne + depthTwo + depthThree;
+      var sumDepth = GetSumOfDepths(depthList, 2);
 
       for (var i = 3; i < depthList.Count; i++)
       {
