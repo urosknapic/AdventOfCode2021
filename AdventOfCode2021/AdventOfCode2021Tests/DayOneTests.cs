@@ -79,5 +79,16 @@ namespace AdventOfCode2021Tests
 
       Assert.AreEqual(result, 1167);
     }
+
+    [Test]
+    public void DayOne_PartTwo_WhenListOfdepthsWithManyElements_Return5()
+    {
+      var depthList = new List<int>() { 199, 200, 208, 210, 200, 207, 240, 269, 260, 263 };
+      var dayOne = new DayOne();
+
+      var result = dayOne.GetLargerMeasurmentsByThree(depthList);
+
+      Assert.AreEqual(result, 5);
+    }
   }
 }
