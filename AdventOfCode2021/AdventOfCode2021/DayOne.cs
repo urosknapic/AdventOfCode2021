@@ -2,9 +2,26 @@
 {
   public class DayOne
   {
-    public int GetLargerMeasurments(IEnumerable<int> depthList)
+    public int GetLargerMeasurments(List<int> depthList)
     {
-      return 0;
+      var measurmentResult = 0;
+      if (depthList == null || depthList.Count == 0)
+      {
+        return measurmentResult;
+      }
+
+      var depth = depthList[0];
+
+      for (var i = 1; i < depthList.Count; i++)
+      {
+        if(depthList[i] > depth)
+        {
+          measurmentResult++;
+        }
+        depth = depthList[i];
+      }
+
+      return measurmentResult;
     }
   }
 }
