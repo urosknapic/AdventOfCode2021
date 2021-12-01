@@ -6,3 +6,7 @@ var dayOne = new DayOne();
 Console.WriteLine(dayOne.GetLargerMeasurments(depthList));
 
 Console.ReadKey();
+
+Console.WriteLine(dayOne.GetLargerMeasurmentsByThree(depthList));
+
+Console.ReadKey();
