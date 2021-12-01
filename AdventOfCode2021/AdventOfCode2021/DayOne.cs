@@ -1,6 +1,6 @@
 ﻿namespace AdventOfCode2021
 {
-  internal class DayOne
+  public class DayOne
   {
     public int GetLargerMeasurments(IEnumerable<int> depthList)
     {
