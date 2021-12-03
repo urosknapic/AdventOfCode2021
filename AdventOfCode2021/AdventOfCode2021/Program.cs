@@ -10,12 +10,17 @@
 
 //Console.ReadKey();
 
-var dayTwo = new DayTwo();
-var partTwo = new DayTwo_PartTwo();
+//var dayTwo = new DayTwo();
+//var partTwo = new DayTwo_PartTwo();
 
-//Console.WriteLine(dayTwo.GetSubmarinePosition(dayTwo.ExampleCommands)); // returns 150
+////Console.WriteLine(dayTwo.GetSubmarinePosition(dayTwo.ExampleCommands)); // returns 150
 
-//Console.WriteLine(dayTwo.GetSubmarinePosition(dayTwo.MyPuzzleSet)); // returns 1694130
+////Console.WriteLine(dayTwo.GetSubmarinePosition(dayTwo.MyPuzzleSet)); // returns 1694130
 
-Console.WriteLine(partTwo.GetSubmarinePosition(dayTwo.ExampleCommands)); // returns 900
-Console.WriteLine(partTwo.GetSubmarinePosition(dayTwo.MyPuzzleSet)); // returns 900
+//Console.WriteLine(partTwo.GetSubmarinePosition(dayTwo.ExampleCommands)); // returns 900
+//Console.WriteLine(partTwo.GetSubmarinePosition(dayTwo.MyPuzzleSet)); // returns 900
+
+var dayThree = new DayThree();
+var rate = dayThree.PartOne();
+
+Console.WriteLine(rate);
