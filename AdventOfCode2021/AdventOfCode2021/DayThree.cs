@@ -1038,9 +1038,14 @@ namespace AdventOfCode2021
 
     public int PartTwo()
     {
-      var oxygenRating = GetMostCommonBitOxygenString(ExampleBits);
-      var co2Rating = GetMostCommonBitCO2String(ExampleBits);
-      return 0;
+      var oxygenRating = GetMostCommonBitOxygenString(MyPuzzleSet);
+      int oxygenRatingInt = Convert.ToInt32(oxygenRating, 2);
+
+
+      var co2Rating = GetMostCommonBitCO2String(MyPuzzleSet);
+      int co2Ratingint = Convert.ToInt32(co2Rating, 2);
+
+      return oxygenRatingInt * co2Ratingint;
     }
 
     private string GetMostCommonBitString(List<string> listOfBitStrings)
@@ -1071,9 +1076,9 @@ namespace AdventOfCode2021
       var bitLength = 0;
       StringBuilder sb = new StringBuilder();
 
-      if (MyPuzzleSet.Count > 0)
+      if (listOfBitStrings.Count > 0)
       {
-        bitLength = MyPuzzleSet[0].Length;
+        bitLength = listOfBitStrings[0].Length;
       }
 
       for (var i = 0; i < bitLength; i++)
@@ -1082,10 +1087,14 @@ namespace AdventOfCode2021
 
         var bitZero = common.GetValueOrDefault('0');
         var bitOne = common.GetValueOrDefault('1');
+        var numbersToSelect = bitZero == bitOne ? '1' : bitZero > bitOne ? '0' : '1';
 
-        var bitForAppend = bitZero == bitOne ? "1" : (bitZero > bitOne ? "0" : "1");
-
-        sb.Append(bitForAppend);
+        // keep list with common thing
+        listOfBitStrings = listOfBitStrings.Where(s => s[i] == numbersToSelect).ToList();
+        if(listOfBitStrings.Count == 1)
+        {
+          sb.Append(listOfBitStrings[0]);
+        }
       }
 
       return sb.ToString();
@@ -1096,9 +1105,9 @@ namespace AdventOfCode2021
       var bitLength = 0;
       StringBuilder sb = new StringBuilder();
 
-      if (MyPuzzleSet.Count > 0)
+      if (listOfBitStrings.Count > 0)
       {
-        bitLength = MyPuzzleSet[0].Length;
+        bitLength = listOfBitStrings[0].Length;
       }
 
       for (var i = 0; i < bitLength; i++)
@@ -1107,10 +1116,13 @@ namespace AdventOfCode2021
 
         var bitZero = common.GetValueOrDefault('0');
         var bitOne = common.GetValueOrDefault('1');
+        var numbersToSelect = bitZero == bitOne ? '0' : bitZero < bitOne ? '0' : '1';
 
-        var bitForAppend = bitZero == bitOne ? "0" : (bitZero > bitOne ? "0" : "1");
-
-        sb.Append(bitForAppend);
+        listOfBitStrings = listOfBitStrings.Where(s => s[i] == numbersToSelect).ToList();
+        if (listOfBitStrings.Count == 1)
+        {
+          sb.Append(listOfBitStrings[0]);
+        }
       }
 
       return sb.ToString();

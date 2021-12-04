@@ -21,6 +21,6 @@
 //Console.WriteLine(partTwo.GetSubmarinePosition(dayTwo.MyPuzzleSet)); // returns 900
 
 var dayThree = new DayThree();
-var rate = dayThree.PartOne();
+var rate = dayThree.PartTwo();
 
 Console.WriteLine(rate);
