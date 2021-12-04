@@ -20,7 +20,12 @@
 //Console.WriteLine(partTwo.GetSubmarinePosition(dayTwo.ExampleCommands)); // returns 900
 //Console.WriteLine(partTwo.GetSubmarinePosition(dayTwo.MyPuzzleSet)); // returns 900
 
-var dayThree = new DayThree();
-var rate = dayThree.PartTwo();
+//var dayThree = new DayThree();
+//var rate = dayThree.PartTwo();
 
-Console.WriteLine(rate);
+//Console.WriteLine(rate);
+
+var dayFour = new DayFour();
+var data = dayFour.GetBingoData("example.txt");
+var a = 1;
+
